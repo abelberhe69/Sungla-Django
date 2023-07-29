@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'header.html' %}
+   <!-- body -->
+   <body class="main-layout position_head">
+      <!-- loader  -->
+      <!-- <div class="loader_bg">
+         <div class="loader"><img src="{% static 'images/loading.gif' %}" alt="#" /></div>
+      </div> -->
+      <!-- end loader -->
+      <!-- header -->
+      {% include 'navbar.html' %}
+      <!-- end header inner -->
+      <!-- end header -->
+      <!-- about section -->
+      <div class="about">
+         <div class="container">
+            <div class="row d_flex">
+               <div class="col-md-5">
+                  <div class="about_img">
+                     <figure><img src="{% static 'images/about_img.png' %}" alt="#"/></figure>
+                  </div>
+               </div>
+               <div class="col-md-7">
+                  <div class="titlepage">
+                    {% for ab in about %}
+                     <h2>{{ab.title}}</h2>
+                     <p>{{ab.description}}</p>
+                  {% endfor %}
+                  </div>
+                  <a class="read_more" href="#">Read More</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- about section -->
+      <!--  footer -->
+    {% include 'footer.html'%}
+      <!-- end footer -->
+      <!-- Javascript files-->
+      {% include 'scripts.html' %}
+   </body>
+</html>
